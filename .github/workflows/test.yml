@@ -18,7 +18,15 @@ jobs:
         steps:
         - name: mostrar texto
           run: echo "Hola Mundo 2"
-    
+        - name: instalar PHP y composer 
+          run: |
+            choco install php --version=0.1
+            choco install composer
+            php -v
+            composer --version
+            
+
+        
     test:
         runs-on: windows-latest
         needs: [build]
